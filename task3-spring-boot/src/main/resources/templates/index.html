@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot Лабораторная</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Spring Boot Студенты </h1>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">Задание 3</h3>
+                </div>
+                <div class="card-body text-center">
+                    <p>Форма добавления студента с автоматическим<br>
+                        формированием группы и логина</p>
+                    <a href="/form" class="btn btn-primary btn-lg">Перейти к форме</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <h3 class="mb-0">Задание 4</h3>
+                </div>
+                <div class="card-body text-center">
+                    <p>CRUD операции со списком студентов:<br>
+                        просмотр, добавление, детали, удаление</p>
+                    <a href="/students" class="btn btn-success btn-lg">Перейти к списку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление студента</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Добавление нового студента</h1>
+
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            <h3>Форма добавления</h3>
+        </div>
+        <div class="card-body">
+            <form action="#" th:action="@{/students/add}" th:object="${student}" method="post">
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Фамилия</label>
+                        <input type="text" class="form-control" th:field="*{lastName}" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Имя</label>
+                        <input type="text" class="form-control" th:field="*{firstName}" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Отчество</label>
+                        <input type="text" class="form-control" th:field="*{middleName}">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">E-mail</label>
+                        <input type="email" class="form-control" th:field="*{email}" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Город</label>
+                        <input type="text" class="form-control" th:field="*{city}" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Пол</label>
+                        <select class="form-select" th:field="*{gender}" required>
+                            <option value="">Выберите</option>
+                            <option value="Мужской">Мужской</option>
+                            <option value="Женский">Женский</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Возраст</label>
+                        <input type="number" class="form-control" th:field="*{age}" min="16" max="60" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Факультет</label>
+                        <select class="form-select" th:field="*{faculty}" required>
+                            <option value="">Выберите</option>
+                            <option value="Радиотехнический">Радиотехнический</option>
+                            <option value="Информационных технологий">Информационных технологий</option>
+                            <option value="Экономический">Экономический</option>
+                            <option value="Юридический">Юридический</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Группа</label>
+                        <input type="text" class="form-control" th:field="*{groupName}"
+                               placeholder="Например: ПИНз-123">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Логин</label>
+                        <input type="text" class="form-control" th:field="*{login}"
+                               placeholder="Например: student-pinz123-1">
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-success btn-lg">Добавить</button>
+                    <a href="/students" class="btn btn-secondary btn-lg">Отмена</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

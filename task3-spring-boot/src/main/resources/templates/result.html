@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат - Задание 3</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Студент успешно добавлен!</h1>
+
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            <h3>Данные студента</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>ID:</strong> <span th:text="${student.id}"></span></p>
+                    <p><strong>Фамилия:</strong> <span th:text="${student.lastName}"></span></p>
+                    <p><strong>Имя:</strong> <span th:text="${student.firstName}"></span></p>
+                    <p><strong>Отчество:</strong> <span th:text="${student.middleName}"></span></p>
+                    <p><strong>E-mail:</strong> <span th:text="${student.email}"></span></p>
+                    <p><strong>Город:</strong> <span th:text="${student.city}"></span></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Пол:</strong> <span th:text="${student.gender}"></span></p>
+                    <p><strong>Возраст:</strong> <span th:text="${student.age}"></span></p>
+                    <p><strong>Факультет:</strong> <span th:text="${student.faculty}"></span></p>
+                    <p><strong>Группа:</strong> <span class="badge bg-primary" th:text="${student.groupName}"></span></p>
+                    <p><strong>Логин для портала:</strong> <span class="badge bg-info text-white" th:text="${student.login}"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="/form" class="btn btn-primary">Добавить ещё</a>
+            <a href="/" class="btn btn-secondary">На главную</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

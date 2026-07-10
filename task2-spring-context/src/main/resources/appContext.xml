@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Регистрация студентов -->
+    <bean id="javaStudent" class="ru.kafpin.JavaStudent"/>
+    <bean id="pythonStudent" class="ru.kafpin.PythonStudent"/>
+    <bean id="cppStudent" class="ru.kafpin.CppStudent"/>
+
+    <!-- Внедрение через конструктор (используем CppStudent) -->
+    <bean id="departmentConstructor" class="ru.kafpin.Department">
+        <constructor-arg ref="cppStudent"/>
+    </bean>
+
+    <!-- Внедрение через сеттер (используем PythonStudent) -->
+    <bean id="departmentSetter" class="ru.kafpin.Department">
+        <property name="student" ref="pythonStudent"/>
+    </bean>
+
+</beans>
